@@ -1,0 +1,18 @@
+ class Solution {
+     public boolean searchMatrix(int[][] matrix, int target) {
+         if(matrix.length == 0)
+             return false;
+         int rowIndex = 0;//代表下标 
+         int colIndex = matrix[0].length - 1;//代表下标
+         while(rowIndex < matrix.length && colIndex  >=0)
+         {
+             if(target == matrix[rowIndex][colIndex])
+                return true;
+            else if(target > matrix[rowIndex][colIndex])
+                rowIndex++;
+            else
+                colIndex--;
+        }
+        return false;
+    }
+}
